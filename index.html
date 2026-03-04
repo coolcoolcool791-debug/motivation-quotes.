@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ninja Eclipse: Shadow Trials</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+    <section id="character-screen" class="screen active">
+      <h1>Ninja Eclipse: Shadow Trials</h1>
+      <p class="subtitle">Choose your fierce hero and survive the shadow waves.</p>
+      <div id="character-grid" class="card-grid"></div>
+      <div class="selection-footer">
+        <div id="selected-summary">No ninja selected</div>
+        <button id="start-btn" class="glow-btn" disabled>Start Adventure</button>
+      </div>
+    </section>
+
+    <section id="game-screen" class="screen">
+      <div class="hud">
+        <div class="panel left">
+          <div id="hero-name">Hero</div>
+          <div>Level <span id="hero-level">1</span> | Wave <span id="wave">1</span></div>
+          <div>HP <span id="hp">100</span>/<span id="max-hp">100</span></div>
+          <div>XP <span id="xp">0</span>/<span id="xp-next">100</span></div>
+        </div>
+        <div class="panel center">
+          <button id="ability-btn" class="glow-btn">Unleash Ability (Space)</button>
+          <div id="ability-name">Ability: -</div>
+        </div>
+        <div class="panel right controls">
+          <span>Move: WASD / Arrows</span>
+          <span>Attack: J / Left Click</span>
+          <span>Special: Space / K</span>
+          <span>Stealth: L</span>
+        </div>
+      </div>
+
+      <canvas id="game" width="960" height="540"></canvas>
+
+      <div class="ability-menu panel">
+        <h3>Upgrades</h3>
+        <p>Spend points after leveling up.</p>
+        <button data-upgrade="speed" class="upgrade">Speed +10%</button>
+        <button data-upgrade="attack" class="upgrade">Attack +15%</button>
+        <button data-upgrade="special" class="upgrade">Special +20%</button>
+        <div id="upgrade-points">Points: 0</div>
+      </div>
+
+      <div id="overlay-message" class="overlay hidden"></div>
+    </section>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
