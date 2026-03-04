@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GPS Tracker (Personal Use)</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header>
+        <h1>GPS Tracking App</h1>
+        <p class="subtitle">For your own device or car (consent-based use only)</p>
+      </header>
+
+      <section class="controls card">
+        <button id="startBtn">Start Tracking</button>
+        <button id="stopBtn" disabled>Stop Tracking</button>
+        <button id="simulateBtn">Run Simulation</button>
+        <button id="exportBtn" disabled>Export JSON</button>
+      </section>
+
+      <section class="status card">
+        <h2>Status</h2>
+        <p><strong>Tracking:</strong> <span id="trackingState">Not running</span></p>
+        <p><strong>Points:</strong> <span id="pointCount">0</span></p>
+        <p><strong>Total distance:</strong> <span id="distance">0.00 km</span></p>
+        <p><strong>Latest coordinate:</strong> <span id="latest">N/A</span></p>
+      </section>
+
+      <section class="map card">
+        <h2>Simple Track View</h2>
+        <canvas id="trackCanvas" width="800" height="400" aria-label="GPS path canvas"></canvas>
+      </section>
+
+      <section class="note card">
+        <h2>Ethical Note</h2>
+        <p>
+          This app demonstrates GPS concepts for learning. Use it only for your own devices/vehicles or with explicit permission.
+        </p>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
